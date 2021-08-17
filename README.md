@@ -3,7 +3,7 @@ I will be releasing the source code and explanation on how I made this soon when
 These features will include:
 - Being able to change which of the three requests are sent to the appliance (more information to come when I open source it)
 - Checking whether the requests actually worked by reading the response HTML rather than simply checking the status code
-- Being able to change the default classification (default is technology/21 which guarentees an unblock on most sites)
+- ~~Being able to change the default classification (default is technology/21 which guarentees an unblock on most sites)~~ Completed
 # Contentkeeper Site Unblocker
 This is a portable application that allows you to essentially "unblock" nearly any URL. **Source code will be unavaliable for the forseeable future (most likely until the end of 2022) as to not allow the exploit to be patched.** This requires that your network has the "Contentkeeper Appliance" on it. I am unsure if this will work on every Contentkeeper system as I only designed it for the one I am used to. I have heard of different institutions installing the blocking software directly onto computers, so I am unsure if this program will work with those setups.
 The program also has a form of "DRM" in it which prevents it from running if it doesn't recieve a specific response from a site. This was implemented so I could control access, however you can feel free to remove it when I eventually make it open source.
