@@ -6,6 +6,7 @@ These features will include:
 - ~~Being able to change the default classification (default is technology/29 which guarentees an unblock on most sites)~~ **Completed**
 # Contentkeeper Site Unblocker
 This is a portable application that allows you to essentially "unblock" nearly any URL. **Source code will be unavaliable for the forseeable future (most likely until the end of 2022) as to not allow the exploit to be patched.** This requires that your network has the "Contentkeeper Appliance" on it. I am unsure if this will work on every Contentkeeper system as I only designed it for the one I am used to. I have heard of different institutions installing the blocking software directly onto computers, so I am unsure if this program will work with those setups.
+I have found that some sites are unable to be unblocked at my institution (Facebook and Discord to name a few) due to their category being "Global-TOD". I assume this means that they are apart some big global list of URLS that cannot be reclassified. As it currently stands I have no way of unblocking these sites.
 
 The program also has a form of "DRM" in it which prevents it from running if it doesn't recieve a specific response from a site. This was implemented so I could control access, however you can feel free to remove it when I eventually make it open source. If you try run the exe and you get a message saying I have disabled the program, this means one of three things:
 1) Github is down/blocked (I can't do anything about this)
