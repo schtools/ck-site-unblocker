@@ -1,0 +1,188 @@
+-1: Remove from Local/Custom Category
+0: None
+1: Change to Local - Adult Content                   
+2: Change to Local - News                            
+3: Change to Local - Job Search                      
+4: Change to Local - Gambling                        
+5: Change to Local - Travel/Tourism                  
+6: Change to Local - Shopping                        
+7: Change to Local - Entertainment                   
+8: Change to Local - Instant Messaging               
+9: Change to Local - Dating Sites                    
+10: Change to Local - Game Sites                      
+11: Change to Local - Investment Sites                
+12: Change to Local - E-Banking                       
+13: Change to Local - Crime/Terrorism                 
+14: Change to Local - Religion/Personal Beliefs       
+15: Change to Local - Politics                        
+16: Change to Local - Sports                          
+17: Change to Local - www-Email Sites                 
+18: Change to Local - Violence/Undesirable            
+19: Change to Local - Malicious                       
+20: Change to Local - Search Sites                    
+21: Change to Local - Health Sites                    
+22: Change to Local - Clubs and Societies             
+23: Change to Local - Video                           
+24: Change to Local - Business Oriented               
+25: Change to Local - Government Blocking List        
+26: Change to Local - Educational                     
+27: Change to Local - Advertising                     
+28: Change to Local - Alcohol                         
+29: Change to Local - Computing/IT                    
+30: Change to Local - Swimsuit/Lingerie/Models        
+31: Change to Local - Remote Control/Desktop          
+101: Change to Custom - Unmetered Sites
+102: Change to Custom - Jacaranda
+1001: Change to Custom - Abortion
+1002: Change to Custom - AlternativeSexualLifestyles(GLBT)
+1003: Change to Custom - Animals:Pet
+1004: Change to Custom - Arts:Culture
+1005: Change to Custom - Auctions
+1006: Change to Custom - Backups:Storage
+1007: Change to Custom - AudioStreamingServices
+1008: Change to Custom - Botnets
+1009: Change to Custom - Charities
+1010: Change to Custom - ChildEntertainment
+1011: Change to Custom - ChildAbuseMaterial
+1012: Change to Custom - Dictionary
+1013: Change to Custom - Drugs:Pharmaceuticals
+1014: Change to Custom - DynamicDNS
+1015: Change to Custom - Chatrooms
+1016: Change to Custom - EducationalGames
+1017: Change to Custom - EmbeddedThreats
+1018: Change to Custom - Fashion
+1019: Change to Custom - Government
+1020: Change to Custom - Guns&amp;Weapons
+1021: Change to Custom - Hacking
+1022: Change to Custom - Hobbies
+1023: Change to Custom - HostedServices
+1024: Change to Custom - Humor
+1027: Change to Custom - ISPs
+1028: Change to Custom - Keyloggers
+1029: Change to Custom - Media:FileSharing
+1030: Change to Custom - Millitary
+1031: Change to Custom - ITSecurity
+1033: Change to Custom - Nudity
+1034: Change to Custom - OnlineMeetings&amp;Collaboration
+1035: Change to Custom - PaytoSurf
+1036: Change to Custom - Personal
+1037: Change to Custom - Phishing:Frauds
+1038: Change to Custom - Proxies:Filtering-Bypass
+1039: Change to Custom - RealEstate
+1040: Change to Custom - Radio
+1041: Change to Custom - Restaurants/Dining/Food
+1042: Change to Custom - SexEducation
+1043: Change to Custom - SocialNetworking
+1044: Change to Custom - SoftwareDownloading/Sharing
+1045: Change to Custom - SpamURLs
+1046: Change to Custom - SpecialEvents
+1047: Change to Custom - Spyware
+1048: Change to Custom - StockTrading
+1049: Change to Custom - SurveillanceMonitoringSiteCams
+1050: Change to Custom - Suspicious
+1051: Change to Custom - TextMessaging
+1052: Change to Custom - Tobacco
+1053: Change to Custom - Unions&amp;ProfessionalOrganisations
+1054: Change to Custom - Vehicles
+1055: Change to Custom - ViralVideo
+1056: Change to Custom - Weather
+1057: Change to Custom - ITForums:Blogs
+1058: Change to Custom - PeertoPeer
+1059: Change to Custom - ShareWare:FreeWare
+1060: Change to Custom - TV
+1061: Change to Custom - Drugs:illicit
+1062: Change to Custom - AcademicFraud
+1063: Change to Custom - Cults
+201: Add in Local - Adult Content                   
+202: Add in Local - News                            
+203: Add in Local - Job Search                      
+204: Add in Local - Gambling                        
+205: Add in Local - Travel/Tourism                  
+206: Add in Local - Shopping                        
+207: Add in Local - Entertainment                   
+208: Add in Local - Instant Messaging               
+209: Add in Local - Dating Sites                    
+210: Add in Local - Game Sites                      
+211: Add in Local - Investment Sites                
+212: Add in Local - E-Banking                       
+213: Add in Local - Crime/Terrorism                 
+214: Add in Local - Religion/Personal Beliefs       
+215: Add in Local - Politics                        
+216: Add in Local - Sports                          
+217: Add in Local - www-Email Sites                 
+218: Add in Local - Violence/Undesirable            
+219: Add in Local - Malicious                       
+220: Add in Local - Search Sites                    
+221: Add in Local - Health Sites                    
+222: Add in Local - Clubs and Societies             
+223: Add in Local - Video                           
+224: Add in Local - Business Oriented               
+225: Add in Local - Government Blocking List        
+226: Add in Local - Educational                     
+227: Add in Local - Advertising                     
+228: Add in Local - Alcohol                         
+229: Add in Local - Computing/IT                    
+230: Add in Local - Swimsuit/Lingerie/Models        
+231: Add in Local - Remote Control/Desktop          
+301: Add in Custom - Unmetered Sites
+302: Add in Custom - Jacaranda
+1201: Add in Custom - Abortion
+1202: Add in Custom - AlternativeSexualLifestyles(GLBT)
+1203: Add in Custom - Animals:Pet
+1204: Add in Custom - Arts:Culture
+1205: Add in Custom - Auctions
+1206: Add in Custom - Backups:Storage
+1207: Add in Custom - AudioStreamingServices
+1208: Add in Custom - Botnets
+1209: Add in Custom - Charities
+1210: Add in Custom - ChildEntertainment
+1211: Add in Custom - ChildAbuseMaterial
+1212: Add in Custom - Dictionary
+1213: Add in Custom - Drugs:Pharmaceuticals
+1214: Add in Custom - DynamicDNS
+1215: Add in Custom - Chatrooms
+1216: Add in Custom - EducationalGames
+1217: Add in Custom - EmbeddedThreats
+1218: Add in Custom - Fashion
+1219: Add in Custom - Government
+1220: Add in Custom - Guns&amp;Weapons
+1221: Add in Custom - Hacking
+1222: Add in Custom - Hobbies
+1223: Add in Custom - HostedServices
+1224: Add in Custom - Humor
+1227: Add in Custom - ISPs
+1228: Add in Custom - Keyloggers
+1229: Add in Custom - Media:FileSharing
+1230: Add in Custom - Millitary
+1231: Add in Custom - ITSecurity
+1233: Add in Custom - Nudity
+1234: Add in Custom - OnlineMeetings&amp;Collaboration
+1235: Add in Custom - PaytoSurf
+1236: Add in Custom - Personal
+1237: Add in Custom - Phishing:Frauds
+1238: Add in Custom - Proxies:Filtering-Bypass
+1239: Add in Custom - RealEstate
+1240: Add in Custom - Radio
+1241: Add in Custom - Restaurants/Dining/Food
+1242: Add in Custom - SexEducation
+1243: Add in Custom - SocialNetworking
+1244: Add in Custom - SoftwareDownloading/Sharing
+1245: Add in Custom - SpamURLs
+1246: Add in Custom - SpecialEvents
+1247: Add in Custom - Spyware
+1248: Add in Custom - StockTrading
+1249: Add in Custom - SurveillanceMonitoringSiteCams
+1250: Add in Custom - Suspicious
+1251: Add in Custom - TextMessaging
+1252: Add in Custom - Tobacco
+1253: Add in Custom - Unions&amp;ProfessionalOrganisations
+1254: Add in Custom - Vehicles
+1255: Add in Custom - ViralVideo
+1256: Add in Custom - Weather
+1257: Add in Custom - ITForums:Blogs
+1258: Add in Custom - PeertoPeer
+1259: Add in Custom - ShareWare:FreeWare
+1260: Add in Custom - TV
+1261: Add in Custom - Drugs:illicit
+1262: Add in Custom - AcademicFraud
+1263: Add in Custom - Cults
