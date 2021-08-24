@@ -91,7 +91,7 @@ try:
 
     # The reclassification function, this allows a user to reclassify a url of their choosing
     def reclassify(user_url):
-        global data#url, reclass, output_txt, is_global_state, cat, dat, requests_to_send, user
+        global data
         url = data['url']
         reclass = data['reclass']
         cat = data['cat']
@@ -118,6 +118,21 @@ try:
             output_txt.insert(INSERT, "---------------------------NEW---------------------------\n")
             output_txt.insert(INSERT, f"Starting requests on {user_url}...\n")
             output_txt.insert(INSERT, f"Selected database is {dat}\n")
+
+            # Initial checking to make sure whether the site is actually blocked or not/whether it exists
+            # This doesn't impact the requests below in any way but you can modify it to be specific to your network
+            output_txt.insert(INSERT, "Checking whether site can be unblocked...\n")
+            try:
+                check_req = get("https://" + str(user_url), verify=False)
+                if check_req.status_code != 200:
+                    raise Exception("Bad response")
+                if "Custom-URL-TOD -->" in check_req.text or "Web 2.0 Site" in check_req.text or "(Time of Day) -->" in check_req.text:
+                    raise Exception("Site cannot be unblocked/reclassified")
+                if not "Blocked by ContentKeeper" in check_req.text or not "Non-Managed Site" in check_req.text or not "Site \"Coaching\" by ContentKeeper" in check_req.text:
+                    raise Exception("Site isn't blocked")
+                output_txt.insert(INSERT, "Site can be unblocked!\n\n")
+            except Exception as e:
+                output_txt.insert(INSERT, f"Error checking site: {e}\nSite may not be unblocked\n\n")
 
             # The "open" request
             if requests_to_send["open"]:
@@ -182,18 +197,19 @@ try:
 
     # The settings window
     def open_settings():
-        global data, settings, reclassifications, reclassifications_dict, settings_open#url, cat, reclass, settings, reclassifications, reclassifications_dict, requests_to_send, user, settings_open, dat
+        global data, settings, reclassifications, reclassifications_dict, settings_open
+
+        # If there is already a settings window open, prevent another one from opening
+        if settings_open:
+            return
+
         url = data['url']
         reclass = data['reclass']
         cat = data['cat']
         dat = data['dat']
         requests_to_send = data['requests to send']
         user = data['user']
-
-        # If there is already a settings window open, prevent another one from opening
-        if settings_open:
-            return
-
+        
         settings_open = True
         
         # Settings window setup
@@ -268,8 +284,8 @@ try:
             settings_open = False
             settings.destroy()
         
-        def save_settings():#appliance_url_input, cat_index, reclass_index, open_checkbox, choose_checkbox, confirm_checkbox, is_global_list):  # This is VERY yucky but global variables won't work for some reason
-            global data#url, cat, reclass, requests_to_send, user, dat
+        def save_settings():
+            global data
             nonlocal url, cat, reclass, requests_to_send, user, dat, appliance_url_input, cat_index, reclass_index, open_checkbox, choose_checkbox, confirm_checkbox, is_global_list
             
             requests_to_send["open"] = bool(open_value.get())
@@ -301,7 +317,7 @@ try:
         cancel_button = Button(settings, text="Cancel", command=close_settings)
         cancel_button.place(x=100, y=360)
         
-        save_button = Button(settings, text="Save Settings", command=save_settings)#lambda: save_settings(appliance_url_input, cat_index, reclass_index, open_checkbox, choose_checkbox, confirm_checkbox, is_global_list))  # This is VERY yucky but global variables won't work for some reason
+        save_button = Button(settings, text="Save Settings", command=save_settings)
         save_button.place(x=12, y=360)
         
         # Showing the window
