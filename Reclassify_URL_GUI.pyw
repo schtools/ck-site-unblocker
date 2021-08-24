@@ -13,7 +13,8 @@ try:
     from tkinter import messagebox
     from traceback import format_exc
     from datetime import datetime
-    from os import path
+    from os import path, getcwd
+    from json import load, dump
 
     # For autopytoexe
     def resource_path(relative_path):
@@ -34,20 +35,31 @@ try:
     window.resizable(False, False)
     window.iconbitmap(resource_path("Graphicloads-Polygon-Lock-unlock.ico"))
     
-    # Initial variables
-    requests_to_send = {
-        "open": False,
-        "choose": True,
-        "confirm": True
+    # Settings variables
+    data = {
+        "requests to send" : {
+            "open": False,
+            "choose": True,
+            "confirm": True
+        },
+        "url" : "https://192.168.55.243/cgi-bin/ck/re_u.cgi",
+        "reclass" : "29",
+        "cat" : "-1",
+        "dat" : "n/a",
+        "user" : "you/organization"
     }
 
-    url = "https://192.168.55.243/cgi-bin/ck/re_u.cgi"
-    reclass = "29" # Could also be 229, however that adds computing/it to the classification rather than changes it
-    cat = "-1"
-    dat = "n/a"
+    # Loading/creating the save file
+    if path.exists("config.ini"):
+        with open("config.ini", "r") as config:
+            data = load(config)
+            config.close()
+    else:
+        with open("config.ini", "w+") as config:
+            dump(data, config)
+            config.close()
+    
     settings = None
-    user = "you/organization"
-
     settings_open = False
 
     # My access management (done if I want to maybe push a new version or have to revoke the ability for people to use it temporarily)
@@ -79,7 +91,13 @@ try:
 
     # The reclassification function, this allows a user to reclassify a url of their choosing
     def reclassify(user_url):
-        global url, reclass, output_txt, is_global_state, cat, dat, requests_to_send, user
+        global data#url, reclass, output_txt, is_global_state, cat, dat, requests_to_send, user
+        url = data['url']
+        reclass = data['reclass']
+        cat = data['cat']
+        dat = data['dat']
+        requests_to_send = data['requests to send']
+        user = data['user']
 
         # This function checks the text of the request's response and returns True if it indicates that the Appliance accpets it
         def check_response(req_type, text):
@@ -164,7 +182,13 @@ try:
 
     # The settings window
     def open_settings():
-        global url, cat, reclass, settings, reclassifications, reclassifications_dict, requests_to_send, user, settings_open, dat
+        global data, settings, reclassifications, reclassifications_dict, settings_open#url, cat, reclass, settings, reclassifications, reclassifications_dict, requests_to_send, user, settings_open, dat
+        url = data['url']
+        reclass = data['reclass']
+        cat = data['cat']
+        dat = data['dat']
+        requests_to_send = data['requests to send']
+        user = data['user']
 
         # If there is already a settings window open, prevent another one from opening
         if settings_open:
@@ -244,8 +268,10 @@ try:
             settings_open = False
             settings.destroy()
         
-        def save_settings(appliance_url_input, cat_index, reclass_index, open_checkbox, choose_checkbox, confirm_checkbox, is_global_list):  # This is VERY yucky but global variables won't work for some reason
-            global url, cat, reclass, requests_to_send, user, dat
+        def save_settings():#appliance_url_input, cat_index, reclass_index, open_checkbox, choose_checkbox, confirm_checkbox, is_global_list):  # This is VERY yucky but global variables won't work for some reason
+            global data#url, cat, reclass, requests_to_send, user, dat
+            nonlocal url, cat, reclass, requests_to_send, user, dat, appliance_url_input, cat_index, reclass_index, open_checkbox, choose_checkbox, confirm_checkbox, is_global_list
+            
             requests_to_send["open"] = bool(open_value.get())
             requests_to_send["choose"] = bool(choose_value.get())
             requests_to_send["confirm"] = bool(confirm_value.get())
@@ -254,13 +280,28 @@ try:
             reclass = reclass_index.get().split(": ")[0]
             user = user_input.get()
             dat = is_global_state.get()
+
+            data = {
+                "requests to send" : requests_to_send,
+                "url" : url,
+                "reclass" : reclass,
+                "cat" : cat,
+                "dat" : dat,
+                "user" : user
+            }
+
+            with open("config.ini", "w") as config:
+                config.truncate(0)
+                dump(data, config) 
+                config.close()
+            
             close_settings()
         
         # Save and cancel inputs
         cancel_button = Button(settings, text="Cancel", command=close_settings)
         cancel_button.place(x=100, y=360)
         
-        save_button = Button(settings, text="Save Settings", command=lambda: save_settings(appliance_url_input, cat_index, reclass_index, open_checkbox, choose_checkbox, confirm_checkbox, is_global_list))  # This is VERY yucky but global variables won't work for some reason
+        save_button = Button(settings, text="Save Settings", command=save_settings)#lambda: save_settings(appliance_url_input, cat_index, reclass_index, open_checkbox, choose_checkbox, confirm_checkbox, is_global_list))  # This is VERY yucky but global variables won't work for some reason
         save_button.place(x=12, y=360)
         
         # Showing the window
@@ -291,7 +332,8 @@ try:
     sys.exit(0)
 except Exception as e:
     # Error handling by placing the error details in a traceback file that the user can submit in a Github issue
-    messagebox.showerror("Error occured", f"An error occured, details below and in \"traceback.txt\"\n{e}")
+    raise Exception(e)
+    messagebox.showerror("Error occured", f"An error occured, details below and in \"{getcwd()}\\\\traceback.txt\"\n{e}")
     current_time = datetime.now()
     current_time = current_time.strftime("%a, %d %b %Y %H;%M;%S")
     with open(f"Traceback {current_time}.txt", "w+") as traceback_file:
