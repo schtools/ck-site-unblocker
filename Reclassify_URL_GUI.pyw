@@ -332,7 +332,6 @@ try:
     sys.exit(0)
 except Exception as e:
     # Error handling by placing the error details in a traceback file that the user can submit in a Github issue
-    raise Exception(e)
     messagebox.showerror("Error occured", f"An error occured, details below and in \"{getcwd()}\\\\traceback.txt\"\n{e}")
     current_time = datetime.now()
     current_time = current_time.strftime("%a, %d %b %Y %H;%M;%S")
