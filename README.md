@@ -11,6 +11,8 @@ In most cases, it would probably be option 3. I'll only disable access to the pr
 If the program ever crashes, feel free to create an issue in the issues tab with the traceback.txt and description on how the error occured.
 ### Installing
 Simply download the latest version from the releases tab and run it like a normal executable. Windows will probably think it's a virus due to the way it was compiled. I can assure you that it is not a virus, however you can decide whether you would trust me or not.
+### How this works
+**Todo**
 ### Credits
 Iconarchive.com for the icon: https://iconarchive.com/show/polygon-icons-by-graphicloads/lock-unlock-icon.html (I'm not actually sure if I can use their icon with this).
 My institution for providing the motivation to make this.
