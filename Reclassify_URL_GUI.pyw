@@ -126,7 +126,7 @@ try:
                 check_req = get("https://" + str(user_url), verify=False)
                 if check_req.status_code != 200:
                     raise Exception("Bad response")
-                if "Custom-URL-TOD -->" in check_req.text or "Web 2.0 Site" in check_req.text or "(Time of Day) -->" in check_req.text:
+                if "Custom-URL-TOD -->" in check_req.text or "Web 2.0 Site" in check_req.text or "(Time of Day) -->" in check_req.text or "Certificate Verification Failed" in check_req.text:  # Remember to say that this was updated in the next release
                     raise Exception("Site cannot be unblocked/reclassified")
                 if not "Blocked by ContentKeeper" in check_req.text or not "Non-Managed Site" in check_req.text or not "Site \"Coaching\" by ContentKeeper" in check_req.text:
                     raise Exception("Site isn't blocked")
