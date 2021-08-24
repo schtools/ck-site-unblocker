@@ -30,7 +30,7 @@ try:
     # Tkinter window initialization
     window = Tk()
     window.withdraw()
-    window.title("Contentkeeper Site Unblocker")
+    window.title("Contentkeeper Site Unblocker - By SchTools 2021")  # Mention this in the latest release too
     window.geometry("500x300")
     window.resizable(False, False)
     window.iconbitmap(resource_path("Graphicloads-Polygon-Lock-unlock.ico"))
